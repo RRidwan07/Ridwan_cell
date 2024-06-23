@@ -32,7 +32,12 @@ const Cover = () => {
   };
   return (
     <div>
-      <Navbar providerName={providerName} />
+      <Navbar
+        providerName={providerName}
+        style2="text-black"
+        style1="relative top-[-70px] z-10"
+        style3="flex items-center justify-center mt-[-40px] "
+      />
       <div
         className=" w-auto rounded-lg h-20 flex justify-center items-center mx-5"
         data-theme="wireframe"

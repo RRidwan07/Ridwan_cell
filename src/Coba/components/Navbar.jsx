@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { GoHomeFill } from "react-icons/go";
 
-const Navbar = ({ providerName }) => {
+const Navbar = ({ providerName, style1, style2, style3 }) => {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -22,13 +22,27 @@ const Navbar = ({ providerName }) => {
           <div className="w-16 h-[90px] bg-orange-400 rounded-b-full"></div>
         </div>
       </div>
-      <div className="relative top-[-70px] z-10">
+      <div className={style1}>
         <div className="ml-3">
-          <GoHomeFill onClick={goBack} size={45} className=" text-black " />
+          <GoHomeFill onClick={goBack} size={35} className={style2} />
         </div>
-        <div className="flex items-center justify-center mt-[-40px]">
-          <div className="">
-            <a className="text-xl font-bold ">{providerName}</a>
+        <div className={style3}>
+          <div className="stack">
+            <div className="flex justify-center items-center border border-base-content card bg-base-100 h-12">
+              <div className="card-body font-bold text-xl">{providerName}</div>
+            </div>
+            <div className="flex justify-center items-center border border-base-content card bg-base-100 h-12">
+              <div className="card-body font-bold text-xl">{providerName}</div>
+            </div>
+            <div className="flex justify-center items-center border border-base-content card bg-base-100 h-12">
+              <div className="card-body font-bold text-xl">{providerName}</div>
+            </div>
+            <div className="flex justify-center items-center border border-base-content card bg-base-100 h-12">
+              <div className="card-body font-bold text-xl">{providerName}</div>
+            </div>
+            <div className="flex justify-center items-center border border-base-content card bg-base-100 h-12">
+              <div className="card-body font-bold text-xl">{providerName}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -38,6 +52,9 @@ const Navbar = ({ providerName }) => {
 
 Navbar.propTypes = {
   providerName: PropTypes.string.isRequired,
+  style1: PropTypes.string.isRequired,
+  style2: PropTypes.string.isRequired,
+  style3: PropTypes.string.isRequired,
 };
 
 export default Navbar;

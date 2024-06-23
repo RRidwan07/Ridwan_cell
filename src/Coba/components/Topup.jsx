@@ -12,7 +12,13 @@ const Dompet = () => {
   ];
   return (
     <div>
-      <Navbar providerName="Top Up Game" goBack="/" />
+      <Navbar
+        providerName="Top Up Game"
+        goBack="/"
+        style2="text-black"
+        style1="relative top-[-70px] z-10"
+        style3="flex items-center justify-center mt-[-40px] "
+      />
       {Datas.map((data, i) => (
         <HomeCover key={i} product={data.name} link="coverTopup" />
       ))}

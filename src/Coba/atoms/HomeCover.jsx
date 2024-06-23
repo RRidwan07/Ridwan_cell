@@ -9,7 +9,7 @@ const HomeCover = ({ product, link }) => {
   };
   return (
     <div
-      className="bg-slate-500 h-auto w-full px-5 py-5 flex justify-between items-center"
+      className="border-y-[1px] border-black h-auto w-full px-5 py-5 flex justify-between items-center"
       onClick={handlePress}
     >
       <h3 className="font-bold text-xl">{product}</h3>
