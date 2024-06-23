@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item {
+  list-style: none;
+  display: flex;
+  cursor: move;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 13px;
+  margin-bottom: 11px;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+}
+.item .details {
+  display: block;
+  align-items: center;
+}
