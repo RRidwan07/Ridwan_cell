@@ -21,8 +21,8 @@ const App = () => {
       <Home /> */}
         <BrowserRouter>
           <Routes>
-            <Route path="*" element={<Eror />} />
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<Eror />} />
             <Route path="/cover/:providerName" element={<Cover />} />
             <Route path="/dompet" element={<Dompet />} />
             <Route path="/topup" element={<Topup />} />
