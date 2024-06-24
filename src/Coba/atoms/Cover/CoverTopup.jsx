@@ -23,7 +23,7 @@ const Cover = () => {
   };
 
   const [searchTerm, setSearchTerm] = useState("");
-  //   const isDisabled = searchTerm.length < 10;
+  // const isDisabled = searchTerm.length < 10;
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);

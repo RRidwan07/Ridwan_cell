@@ -6,7 +6,7 @@ import { useState } from "react";
 // import Navbar from "../../components/Navbar";
 import { PropTypes } from "prop-types";
 
-const Cover = ({ providerName, searchTerm }) => {
+const Cover = ({ providerName, searchTerm, disabled }) => {
   const provider = Data.pulsa.find(
     (provider) => provider.name === providerName
   );
@@ -34,13 +34,19 @@ const Cover = ({ providerName, searchTerm }) => {
       {datas.map((data, i) => (
         <Card key={i} product={data} onClick={handleClick} />
       ))}
-      <Popup product={popup} onClose={handleClose} nomer={searchTerm} />
+      <Popup
+        product={popup}
+        onClose={handleClose}
+        nomer={searchTerm}
+        disabled={disabled}
+      />
     </div>
   );
 };
 Cover.propTypes = {
   providerName: PropTypes.string.isRequired,
   searchTerm: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default Cover;

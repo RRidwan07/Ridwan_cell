@@ -6,6 +6,7 @@ const Pulsa = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [navbarTitle, setNavbarTitle] = useState("Pulsa ALL Operator");
   const [provider, setProvider] = useState("");
+  const isDisabled = searchTerm.length < 10;
 
   const handleInputChange = (event) => {
     const term = event.target.value;
@@ -14,19 +15,92 @@ const Pulsa = () => {
   };
 
   const handleSearch = (term) => {
-    if (term.startsWith("0857") || term.startsWith("0858")) {
+    if (
+      term.startsWith("0814") ||
+      term.startsWith("0815") ||
+      term.startsWith("0816") ||
+      term.startsWith("0855") ||
+      term.startsWith("0856") ||
+      term.startsWith("0857") ||
+      term.startsWith("0858") ||
+      term.startsWith("62814") ||
+      term.startsWith("62815") ||
+      term.startsWith("62816") ||
+      term.startsWith("62855") ||
+      term.startsWith("62856") ||
+      term.startsWith("62857") ||
+      term.startsWith("62858")
+    ) {
       setProvider("Indosat");
       setNavbarTitle("Indosat");
-    } else if (term.startsWith("0838") || term.startsWith("0831")) {
+    } else if (
+      term.startsWith("0838") ||
+      term.startsWith("0831") ||
+      term.startsWith("0832") ||
+      term.startsWith("62831") ||
+      term.startsWith("62838") ||
+      term.startsWith("62832")
+    ) {
       setProvider("Axis");
       setNavbarTitle("Axis");
-    } else if (term.startsWith("0852") || term.startsWith("0853")) {
+    } else if (
+      term.startsWith("0811") ||
+      term.startsWith("0812") ||
+      term.startsWith("0813") ||
+      term.startsWith("0821") ||
+      term.startsWith("0822") ||
+      term.startsWith("0823") ||
+      term.startsWith("0852") ||
+      term.startsWith("0853") ||
+      term.startsWith("0851") ||
+      term.startsWith("62811") ||
+      term.startsWith("62812") ||
+      term.startsWith("62813") ||
+      term.startsWith("62821") ||
+      term.startsWith("62822") ||
+      term.startsWith("62823") ||
+      term.startsWith("62852") ||
+      term.startsWith("62853") ||
+      term.startsWith("62851")
+    ) {
       setProvider("Telkomsel");
       setNavbarTitle("Telkomsel");
-    } else if (term.startsWith("0882") || term.startsWith("0883")) {
+    } else if (
+      term.startsWith("0881") ||
+      term.startsWith("0882") ||
+      term.startsWith("0883") ||
+      term.startsWith("0884") ||
+      term.startsWith("0885") ||
+      term.startsWith("0886") ||
+      term.startsWith("0887") ||
+      term.startsWith("0888") ||
+      term.startsWith("0889") ||
+      term.startsWith("62881") ||
+      term.startsWith("62882") ||
+      term.startsWith("62883") ||
+      term.startsWith("62884") ||
+      term.startsWith("62885") ||
+      term.startsWith("62886") ||
+      term.startsWith("62887") ||
+      term.startsWith("62888") ||
+      term.startsWith("62889")
+    ) {
       setProvider("Smartfren");
       setNavbarTitle("Smartfren");
-    } else if (term.startsWith("0817") || term.startsWith("0818")) {
+    } else if (
+      term.startsWith("0817") ||
+      term.startsWith("0818") ||
+      term.startsWith("0819") ||
+      term.startsWith("0859") ||
+      term.startsWith("0877") ||
+      term.startsWith("0878") ||
+      term.startsWith("62817") ||
+      term.startsWith("62818") ||
+      term.startsWith("62819") ||
+      term.startsWith("62859") ||
+      term.startsWith("62877") ||
+      term.startsWith("62878")
+    ) {
       setProvider("Xl");
       setNavbarTitle("Xl");
     } else {
@@ -71,7 +145,13 @@ const Pulsa = () => {
       </div>
 
       <div className="mt-10">
-        {provider && <Cover providerName={provider} searchTerm={searchTerm} />}
+        {provider && (
+          <Cover
+            providerName={provider}
+            searchTerm={searchTerm}
+            disabled={isDisabled}
+          />
+        )}
       </div>
     </div>
   );

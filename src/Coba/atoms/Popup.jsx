@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Popup = ({ product, onClose, nomer }) => {
+const Popup = ({ product, onClose, nomer, disabled }) => {
   if (!product) return null;
   // console.log("Popup product:", product);
   const handleSendWhatsApp = () => {
@@ -31,11 +31,21 @@ const Popup = ({ product, onClose, nomer }) => {
           <b className="mr-2">Nomer : </b>
           {nomer}
         </p>
+        {disabled ? (
+          <p className="text-center text-red-600">
+            Periksa nomer terlebih dahulu
+          </p>
+        ) : (
+          ""
+        )}
         <div className="modal-action">
           <div className="">
             <button
-              className="btn btn-sm btn-success mr-2"
+              className={`btn btn-sm btn-success mr-2 ${
+                disabled ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               onClick={handleSendWhatsApp}
+              disabled={disabled}
             >
               Order
             </button>
@@ -53,6 +63,7 @@ Popup.propTypes = {
   product: PropTypes.object.isRequired,
   onClose: PropTypes.func.isRequired,
   nomer: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default Popup;

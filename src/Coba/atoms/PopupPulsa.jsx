@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const Popup = ({ product, onClose, nomer }) => {
+const Popup = ({ product, onClose, nomer, disabled }) => {
   if (!product) return null;
   // console.log("Popup product:", product);
   const handleSendWhatsApp = () => {
-    const message = `Saya berminat dengan: ${product.title} ${product.kuota} , dengan harga: ${product.nominal}, Nomer tujuan: ${nomer}`;
+    const message = `Saya berminat dengan: ${product.title} ${product.Masa_aktif} , dengan harga: ${product.nominal}, Nomer tujuan: ${nomer}`;
     const whatsappURL = `https://api.whatsapp.com/send?phone=+6285780208049&text=${encodeURIComponent(
       message
     )}`;
@@ -31,11 +31,22 @@ const Popup = ({ product, onClose, nomer }) => {
           <b className="mr-2">Nomer : </b>
           {nomer}
         </p>
+        {disabled ? (
+          <p className="text-center text-red-600">
+            Periksa nomer terlebih dahulu
+          </p>
+        ) : (
+          ""
+        )}
         <div className="modal-action">
           <div className="">
             <button
-              className="btn btn-sm btn-success mr-2"
+              // className="btn btn-sm btn-success mr-2"
               onClick={handleSendWhatsApp}
+              className={`btn btn-sm btn-success mr-2 ${
+                disabled ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={disabled}
             >
               Order
             </button>
@@ -53,6 +64,7 @@ Popup.propTypes = {
   product: PropTypes.object.isRequired,
   onClose: PropTypes.func.isRequired,
   nomer: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default Popup;

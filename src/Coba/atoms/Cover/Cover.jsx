@@ -25,7 +25,7 @@ const Cover = () => {
   };
 
   const [searchTerm, setSearchTerm] = useState("");
-  //   const isDisabled = searchTerm.length < 10;
+  const isDisabled = searchTerm.length < 10;
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -68,7 +68,12 @@ const Cover = () => {
       {datas.map((data, i) => (
         <Card key={i} product={data} onClick={handleClick} />
       ))}
-      <Popup product={popup} onClose={handleClose} nomer={searchTerm} />
+      <Popup
+        product={popup}
+        onClose={handleClose}
+        nomer={searchTerm}
+        disabled={isDisabled}
+      />
     </div>
   );
 };
