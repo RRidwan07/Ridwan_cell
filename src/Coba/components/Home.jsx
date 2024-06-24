@@ -30,6 +30,13 @@ const Home = () => {
         style1="relative top-[-45px] z-10"
         style3="flex items-center justify-center mt-[-30px]"
       />
+      <div
+        className="border-y-[1px] border-black h-auto w-full px-5 py-5 flex justify-between items-center"
+        onClick={() => navigate("/pulsa")}
+      >
+        <h3 className="font-bold text-xl">Pulsa All Operator</h3>
+        <FcNext size={24} />
+      </div>
       {Datas.map((data, i) => (
         <HomeCover key={i} product={data.name} link="cover" />
       ))}

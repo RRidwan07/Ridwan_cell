@@ -1,14 +1,11 @@
-// import Home from "./Components/home";
 import Home from "./Coba/components/Home";
-// import Search from "./Utils/searchPulsa";
-// import Card from "./Utils/card";
 import { HashRouter, Route, Routes } from "react-router-dom";
-// import Eror from "./Coba/atoms/Eror";
 import Cover from "./Coba/atoms/Cover/Cover";
 import Dompet from "./Coba/components/Dompet";
 import Topup from "./Coba/components/Topup";
 import CoverDompet from "./Coba/atoms/Cover/CoverDompet";
 import CoverTopup from "./Coba/atoms/Cover/CoverTopup";
+import Pulsa from "./Coba/components/Pulsa";
 
 const App = () => {
   return (
@@ -26,6 +23,7 @@ const App = () => {
             <Route path="/cover/:providerName" element={<Cover />} />
             <Route path="/dompet" element={<Dompet />} />
             <Route path="/topup" element={<Topup />} />
+            <Route path="/pulsa" element={<Pulsa />} />
             <Route
               path="/coverDompet/:providerName"
               element={<CoverDompet />}

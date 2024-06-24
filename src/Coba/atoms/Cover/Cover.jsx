@@ -46,7 +46,7 @@ const Cover = () => {
           <input
             type="number"
             className="grow"
-            placeholder="Search pulsa"
+            placeholder="Enter Nomer"
             onChange={handleInputChange}
             value={searchTerm}
           />
