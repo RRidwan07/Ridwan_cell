@@ -31,6 +31,7 @@ const Popup = ({ product, onClose, nomer, disabled }) => {
           <b className="mr-2">Nomer : </b>
           {nomer}
         </p>
+        <br />
         {disabled ? (
           <p className="text-center text-red-600">
             Periksa nomer terlebih dahulu
@@ -38,6 +39,7 @@ const Popup = ({ product, onClose, nomer, disabled }) => {
         ) : (
           ""
         )}
+        <br />
         <div className="modal-action">
           <div className="">
             <button

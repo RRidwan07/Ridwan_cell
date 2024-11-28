@@ -6,6 +6,7 @@ import ProvTelkomsel from "./telkomsel1.png";
 import ProvPulsa from "./imageOperator1.png";
 import ProvTopup from "./topup1.jpg";
 import ProvUangDigital from "./UangElektronik1.png";
+import profil from "./profil.png";
 
 export {
   ProvAxis,
@@ -16,4 +17,5 @@ export {
   ProvTopup,
   ProvUangDigital,
   Provxl,
+  profil,
 };

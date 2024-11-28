@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import HomeCover from "../atoms/HomeCover";
 import { FcNext } from "react-icons/fc";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 const Home = () => {
   const navigate = useNavigate();
   const Datas = [
@@ -54,6 +55,7 @@ const Home = () => {
         <h3 className="font-bold text-xl">Top Up Game</h3>
         <FcNext size={24} />
       </div>
+      <Footer />
     </div>
   );
 };
